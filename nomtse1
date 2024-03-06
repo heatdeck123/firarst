@@ -92,7 +92,7 @@ if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?
                         },
                         {
                             ["name"]= "join server",
-                            ["value"]= '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'```", game.Players.LocalPlayer)',
+                            ["value"]= '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)```',
                             ["inline"]= true
                         },
                     }              
