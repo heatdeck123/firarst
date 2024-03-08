@@ -3181,7 +3181,7 @@ local ToggleSpawnCake = Tabs.Main:AddToggle("ToggleSpawnCake", {Title = "Auto Sp
 ToggleSpawnCake:OnChanged(function(Value)
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner",Value)
 end)
-Options.ToggleSpawnCake:SetValue(true)
+Options.ToggleSpawnCake:SetValue(false)
 end
 
     if Second_Sea then
