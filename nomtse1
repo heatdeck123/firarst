@@ -2814,8 +2814,8 @@ end)
     end
 
     Tabs.Main:AddButton({
-        Title = "unlock fps",
-        Description = "unlock ur fps (reduce lag maybe)",
+        Title = "unlock fps (can use both with remove texture)",
+        Description = "for who hate remove texture but still reduce lag",
         Callback = function()
             setfpscap(68)
         end
@@ -2884,7 +2884,7 @@ end)
         TypeMastery = Value
     end)
 
-    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto BF Mastery", Default = false })
+    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto Blox Fruits Mastery", Default = false })
     ToggleMasteryFruit:OnChanged(function(Value)
         AutoFarmMasDevilFruit = Value
     end)
