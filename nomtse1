@@ -26,7 +26,7 @@ if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
     local Encoded = HttpService:JSONEncode(Data)
 
     Request = http_request or request or HttpPost or syn.request
-    local Final1 = {Url = "https://discord.com/api/webhooks/1213836350365634601/Lcp21qx4YnfqEUfRuMnn5zMBpiZi6A4iD_gg4t_Z2-JNHGfBbq1B4yp-YCHuWOL0EXUb" , Body = Encoded, Method = "POST", Headers = Headers}
+    local Final1 = {Url = "https://discord.com/api/webhooks/1215217171521871943/hl6odwR_xItoKq8wiAwlY-cGGnrQBwt08p1nVzxESrpqC5W6bhaY5vwKf4FAwyhpDRTp" , Body = Encoded, Method = "POST", Headers = Headers}
 
     Request(Final1)
 end
