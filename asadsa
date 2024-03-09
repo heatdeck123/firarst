@@ -1,0 +1,8 @@
+local id = game.PlaceId
+if id == 2753915549 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/firarst/main/qasad"))()
+elseif id == 4442272183 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/firarst/main/qasad"))()
+elseif id == 7449423635 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/m1M-Plqer819/any/main/mbmxhub/0135"))()
+else game:Shutdown() end
