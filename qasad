@@ -5056,20 +5056,6 @@ ToggleQuanSat:OnChanged(function(Value)
 end)
 Options.ToggleQuanSat:SetValue(false)
 
-local ToggleAimBotSkill = Tabs.Player:AddToggle("ToggleAimBotSkill", {Title = "Aimbot Skill ( Bug Wait Fix )", Default = false })
-ToggleAimBotSkill:OnChanged(function(Value)
-    Skillaimbot = Value
-end)
-Options.ToggleAimBotSkill:SetValue(false)
-
-local ToggleAimbotGun = Tabs.Player:AddToggle("ToggleAimbotGun", {Title = "Aimbot Gun ( Bug Wait Fix )", Default = false })
-ToggleAimbotGun:OnChanged(function(Value)
-    Aimbot = Value
-end)
-Options.ToggleAimbotGun:SetValue(false)
-
-
-
 local gg = getrawmetatable(game)
 local old = gg.__namecall
 setreadonly(gg, false)
