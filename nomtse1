@@ -2691,7 +2691,7 @@ end)
         end
         end)
 --------------------------------------------------------------------------------------------------------------------------------------------
---[[local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Mob Aura", Default = false })
+local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Mob Aura", Default = false })
 ToggleMobAura:OnChanged(function(Value)
     _G.AutoNear = Value
 end)
@@ -2728,8 +2728,8 @@ spawn(function()
     end
     end
   end)
-]]
-    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid & ", Default = false })
+
+    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid", Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
@@ -3342,7 +3342,7 @@ if Third_Sea then
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
-                                        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                        Tween(v.HumanoidRootPart.CFrame * Pos)
                                         sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
                                     until not _G.AutoBoss or not v.Parent or v.Humanoid.Health <= 0
                                     bringmob = false
