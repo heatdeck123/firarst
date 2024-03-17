@@ -2781,6 +2781,33 @@ end)
             setclipboard("https://discord.gg/FtCARZZXje")
         end
     })
+
+
+
+    local ToggleSafeM = Tabs.Main:AddToggle("ToggleSafeM", {Title = "Anti Flag", Default = true })
+    ToggleMobAura:OnChanged(function(Value)
+        _G.runwhenloworantiflag = Value
+    end)
+    Options.ToggleSafeM:SetValue(true)  
+    spawn(function()
+            while _G.runwhenloworantiflag do
+                task.wait()
+                if
+                    game.Players.LocalPlayer.Character and
+                        game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+                 then
+                    local h =
+                        game.Players.LocalPlayer.Character.Humanoid.Health /
+                        game.Players.LocalPlayer.Character.Humanoid.MaxHealth *
+                        100
+                    if h < 25 then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 150, 0)
+                    end
+                end
+                task.wait()
+            end
+        end)
 ----------------------------------------------------------------------------------------------------------------------------------------------
       Tabs.Main:AddButton({
         Title = "Redeem All Code",
@@ -3130,10 +3157,10 @@ if Third_Sea then
                         Tween(CakeCFrame)
                         end
                     end
-                    if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then   
-                        if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
+                    if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Dough King") or game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then   
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
                             for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do 
-                                if v.Name == "Cake Prince" then
+                                if v.Name == "Cake Prince" or v.Name == "Dough King" then
                                     for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
                                         if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                         if v.Name then
@@ -3801,44 +3828,15 @@ if Second_Sea then
 
     end
 
-        if Third_Sea then
-    local ToggleCakeV2 = Tabs.Main:AddToggle("ToggleCakeV2", {Title = "Kill Dough King (need spawn)", Default = false })
-    ToggleCakeV2:OnChanged(function(Value)
-        _G.AutoCakeV2 = Value
-    end)
-        Options.ToggleCakeV2:SetValue(false)
-end
-    spawn(function()
-        while wait() do
-            if _G.AutoCakeV2 then
-                pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Dough King" then
-                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                    repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
-                                        AutoHaki()
-                                        EquipTool(SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.Humanoid.WalkSpeed = 0
-                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                    until not _G.AutoCakeV2 or not v.Parent or v.Humanoid.Health <= 0
-                                end
-                            end
-                        end
-                    else
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
-                     Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                        else
-                        end
-            
-                    end
-                end)
-            end
+        if Third_Sea or Second_Sea then
+          local stopfly = Tabs.Teleport:AddButton({
+                Title = "stop tween",
+                Description = "Click To stop normal tele or fly",
+                Callback = function()
+                    toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+                end
+            })
         end
-    end)
   
 if Second_Sea or Third_Sea then
     local ToggleHakiColor = Tabs.Stats:AddToggle("ToggleHakiColor", {Title = "Buy Haki Color",Default = false })
