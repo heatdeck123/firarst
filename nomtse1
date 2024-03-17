@@ -4018,7 +4018,7 @@ Options.ToggleF:SetValue(false)
 
 local SliderPosX = Tabs.Setting:AddSlider("SliderPosX", {
     Title = "Pos X",
-    Description = "15",
+    Description = "",
     Default = 15,
     Min = -60,
     Max = 60,
@@ -4034,7 +4034,7 @@ SliderPosX:SetValue(15)
 
 local SliderPosY = Tabs.Setting:AddSlider("SliderPosY", {
     Title = "Pos Y",
-    Description = "15",
+    Description = "",
     Default = 15,
     Min = -60,
     Max = 60,
@@ -4050,7 +4050,7 @@ SliderPosY:SetValue(15)
 
 local SliderPosZ = Tabs.Setting:AddSlider("SliderPosZ", {
     Title = "Pos Z",
-    Description = "-25 or 25",
+    Description = "",
     Default = 25,
     Min = -60,
     Max = 60,
