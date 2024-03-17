@@ -1171,15 +1171,15 @@ CFrameBoss = CFrame.new(-678.648804, 381.353943, -11114.2012, -0.908641815, 0.00
 elseif SelectBoss == "Longma" then
 BossMon = "Longma"
 NameBoss = 'Longma'
-CFrameBoss = CFrame.new(-10238.875976563, 389.7912902832, -9549.7939453125)
+CFrameBoss = CFrame.new(-10248.3936, 353.79129, -9306.34473) 
 elseif SelectBoss == "Soul Reaper" then
 BossMon = "Soul Reaper"
 NameBoss = 'Soul Reaper'
-CFrameBoss = CFrame.new(-9524.7890625, 315.80429077148, 6655.7192382813)
+CFrameBoss = CFrame.new(-9515.62109, 315.925537, 6691.12012)
 elseif SelectBoss == "rip_indra True Form" then
 BossMon = "rip_indra True Form"
 NameBoss = 'rip_indra True Form'
-CFrameBoss = CFrame.new(-5415.3920898438, 505.74133300781, -2814.0166015625)
+CFrameBoss = CFrame.new(-5359, 424, -2735)
 end
 end
 end
@@ -2691,43 +2691,43 @@ end)
         end
         end)
 --------------------------------------------------------------------------------------------------------------------------------------------
-    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Mob Aura", Default = false })
-    ToggleMobAura:OnChanged(function(Value)
-        _G.AutoNear = Value
-    end)
-    Options.ToggleMobAura:SetValue(false)
-    spawn(function()
-        while wait(.1) do
-        if _G.AutoNear then
-        pcall(function()
-          for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
-          if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-          if v.Name then
-          if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChild("HumanoidRootPart").Position).Magnitude <= 5000 then
-            repeat wait(_G.Fast_Delay)
-                AttackNoCD()
-                bringmob = true
-          AutoHaki()
-          EquipTool(SelectWeapon)
-          Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-          v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
-          v.HumanoidRootPart.Transparency = 1
-          v.Humanoid.JumpPower = 0
-          v.Humanoid.WalkSpeed = 0
-          v.HumanoidRootPart.CanCollide = false
-          FarmPos = v.HumanoidRootPart.CFrame
-          MonFarm = v.Name
-          --Click
-          until not _G.AutoNear or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
-          bringmob = false
-        end
-          end
-          end
-          end
-          end)
-        end
-        end
+local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Mob Aura", Default = false })
+ToggleMobAura:OnChanged(function(Value)
+    _G.AutoNear = Value
+end)
+Options.ToggleMobAura:SetValue(false)
+spawn(function()
+    while wait(.1) do
+    if _G.AutoNear then
+    pcall(function()
+      for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
+      if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+      if v.Name then
+      if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChild("HumanoidRootPart").Position).Magnitude <= 5000 then
+        repeat wait(_G.Fast_Delay)
+            AttackNoCD()
+            bringmob = true
+      AutoHaki()
+      EquipTool(SelectWeapon)
+      Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+      v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+      v.HumanoidRootPart.Transparency = 1
+      v.Humanoid.JumpPower = 0
+      v.Humanoid.WalkSpeed = 0
+      v.HumanoidRootPart.CanCollide = false
+      FarmPos = v.HumanoidRootPart.CFrame
+      MonFarm = v.Name
+      --Click
+      until not _G.AutoNear or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
+      bringmob = false
+    end
+      end
+      end
+      end
       end)
+    end
+    end
+  end)
 
     local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid", Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
@@ -5163,7 +5163,7 @@ Tabs.Race:AddButton({
 
 
 
-local ToggleAutoT = Tabs.Player:AddToggle("ToggleAutoT", {Title = "Auto Turn On V3 (T)", Description = "Cannot move normally so turns on while auto farming", Default = false })
+local ToggleAutoT = Tabs.Player:AddToggle("ToggleAutoT", {Title = "Auto Turn On V3", Default = false })
 ToggleAutoT:OnChanged(function(Value)
     _G.AutoT = Value
     end)
@@ -5172,14 +5172,14 @@ ToggleAutoT:OnChanged(function(Value)
     while wait() do
         pcall(function()
             if _G.AutoT then
-                game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
+                game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
             end
         end)
     end
     end)
 
 
-local ToggleAutoY = Tabs.Player:AddToggle("ToggleAutoY", {Title = "Auto Turn On V4 (Y)", Description = "Cannot move normally so turns on while auto farming", Default = false })
+local ToggleAutoY = Tabs.Player:AddToggle("ToggleAutoY", {Title = "Auto Turn On V4", Default = false })
 ToggleAutoY:OnChanged(function(Value)
     _G.AutoY = Value
     end)
