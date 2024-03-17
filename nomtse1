@@ -5391,51 +5391,51 @@ spawn(function()
     shopaholic:OnChanged(function(Value)
     _G.shopping = Value
 	if _G.shopping == "geppo" then
-        wait(1)
+        wait(0.5)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
     elseif _G.shopping == "buso" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
 	elseif _G.shopping == "soru" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
     elseif _G.shopping == "ken" then
-        wait(1)
+        wait(0.5)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk","Buy")
     elseif _G.shopping == "black leg" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
     elseif _G.shopping == "electro" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
     elseif _G.shopping == "fishman karate" then
-        wait(1)
+        wait(0.5)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
     elseif _G.shopping == "dragon claw" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
 	elseif _G.shopping == "superhuman" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
     elseif _G.shopping == "deathstep" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
     elseif _G.shopping == "dragontalon" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
     elseif _G.shopping == "sharkman karate" then
-        wait(1)
+        wait(0.5)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
 	elseif _G.shopping == "electric claw" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
     elseif _G.shopping == "godhuman" then
-        wait(1)
+        wait(0.5)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
     elseif _G.shopping == "sanguine art" then
-        wait(1)
+        wait(0.5)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt", true)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
 	end
