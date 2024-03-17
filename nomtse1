@@ -2565,18 +2565,18 @@ local listfastattack = {'1','0.05','0.1','0.15','0.2','0'}
     })
     DropdownDelayAttack:SetValue("0.15")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackFaiFao_Mode = Value
-	if _G.FastAttackFaiFao_Mode == "0.15" then
+    _G.m1m_Mode = Value
+	if _G.m1m_Mode == "0.15" then
 		_G.Fast_Delay = 0.15
-    elseif _G.FastAttackFaiFao_Mode == "0.05" then
+    elseif _G.m1m_Mode == "0.05" then
 		_G.Fast_Delay = 0.05
-	elseif _G.FastAttackFaiFao_Mode == "0.2" then
+	elseif _G.m1m_Mode == "0.2" then
         _G.Fast_Delay = 0.2
-    elseif _G.FastAttackFaiFao_Mode == "0.1" then
+    elseif _G.m1m_Mode == "0.1" then
 		_G.Fast_Delay = 0.1
-    elseif _G.FastAttackFaiFao_Mode == "0" then
+    elseif _G.m1m_Mode == "0" then
 		_G.Fast_Delay = 0
-    elseif _G.FastAttackFaiFao_Mode == "1" then
+    elseif _G.m1m_Mode == "1" then
         _G.Fast_Delay = 1
 	end
 end)
@@ -2691,9 +2691,17 @@ end)
         end
         end)
 --------------------------------------------------------------------------------------------------------------------------------------------
-local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Mob Aura", Default = false })
+local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {
+    Title = "Mob Aura",
+    Description = "bug",
+    Default = false })
 ToggleMobAura:OnChanged(function(Value)
     _G.AutoNear = Value
+    if Value == false then
+        wait()
+        Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        wait()
+    end
 end)
 Options.ToggleMobAura:SetValue(false)
 spawn(function()
@@ -2729,7 +2737,7 @@ spawn(function()
     end
   end)
 
-    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid", Default = false })
+    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid / indra", Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
@@ -2758,7 +2766,7 @@ spawn(function()
                             FarmPos = v.HumanoidRootPart.CFrame
                             MonFarm = v.Name
                             --Click
-                            until not _G.AutoNear or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
+                            until not _G.CastleRaid or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
                             bringmob = false
                           end
                         end
@@ -3179,7 +3187,7 @@ if Third_Sea then
                                         FarmPos = v.HumanoidRootPart.CFrame
                                         MonFarm = v.Name
                                         --Click
-                                        until not _G.AutoNear or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
+                                        until not _G.CakePrince or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
                                         bringmob = false
                                       end
                                         end
@@ -4064,31 +4072,31 @@ SliderPosZ:SetValue(25)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
-local ToggleMelee = Tabs.Player:AddToggle("ToggleMelee", {Title = "Auto Melee stat", Default = false })
+local ToggleMelee = Tabs.Player:AddToggle("ToggleMelee", {Title = "Auto Melee stats", Default = false })
 ToggleMelee:OnChanged(function(Value)
     _G.Auto_Stats_Melee = Value
     end)
 Options.ToggleMelee:SetValue(false)
 
-local ToggleDe = Tabs.Player:AddToggle("ToggleDe", {Title = "Auto Defense stat", Default = false })
+local ToggleDe = Tabs.Player:AddToggle("ToggleDe", {Title = "Auto Defense stats", Default = false })
 ToggleDe:OnChanged(function(Value)
     _G.Auto_Stats_Defense = Value
     end)
 Options.ToggleDe:SetValue(false)
 
-local ToggleSword = Tabs.Player:AddToggle("ToggleSword", {Title = "Auto Sword stat", Default = false })
+local ToggleSword = Tabs.Player:AddToggle("ToggleSword", {Title = "Auto Sword stats", Default = false })
 ToggleSword:OnChanged(function(Value)
     _G.Auto_Stats_Sword = Value
     end)
 Options.ToggleSword:SetValue(false)
 
-local ToggleGun = Tabs.Player:AddToggle("ToggleGun", {Title = "Auto Gun stat", Default = false })
+local ToggleGun = Tabs.Player:AddToggle("ToggleGun", {Title = "Auto Gun stats", Default = false })
 ToggleGun:OnChanged(function(Value)
     _G.Auto_Stats_Gun = Value
     end)
 Options.ToggleGun:SetValue(false)
 
-local ToggleFruit = Tabs.Player:AddToggle("ToggleFruit", {Title = "Devil Fruit stat", Default = false })
+local ToggleFruit = Tabs.Player:AddToggle("ToggleFruit", {Title = "Devil Fruit stats", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.Auto_Stats_Devil_Fruit = Value
     end)
@@ -4163,6 +4171,39 @@ spawn(function()
         end
     end
 end)
+
+local ToggleFruit = Tabs.Player:AddToggle("ToggleFruit", {Title = "Kai stats", Default = false })
+ToggleFruit:OnChanged(function(Value)
+    _G.Auto_Stats_Kai = Value
+    end)
+Options.ToggleFruit:SetValue(false)
+
+spawn(function()
+    while wait() do
+        if _G.Auto_Stats_Kai then
+            local args = {
+                [1] = "AddPoint",
+                [2] = "Melee",
+                [3] = 2550
+            }
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if _G.Auto_Stats_Kai then
+            local args = {
+                [1] = "AddPoint",
+                [2] = "Defense",
+                [3] = 2550
+            }       
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+    end
+end)
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Player
 local Playerslist = {}
@@ -4193,6 +4234,16 @@ ToggleTeleport:OnChanged(function(Value)
 end)
 Options.ToggleTeleport:SetValue(false)
 
+Tabs.Player:AddButton({
+    Title = "Refresh Player",
+    Description = "",
+    Callback = function()
+        table.clear(Playerslist)
+        for i,v in pairs(game:GetService("Players"):GetChildren()) do
+            table.insert(Playerslist,v.Name)
+        end
+    end
+})
 
 local ToggleQuanSat = Tabs.Player:AddToggle("ToggleQuanSat", {Title = "Spectates Player", Default = false })
 ToggleQuanSat:OnChanged(function(Value)
