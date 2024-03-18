@@ -148,12 +148,12 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Mbm Hub V2",
-    SubTitle = "join my discord server : https://discord.gg/ZRapJfwPmK",
+    SubTitle = "- join my discord server : https://discord.gg/ZRapJfwPmK",
     TabWidth = 160,
-    Size = UDim2.fromOffset(520, 350),
+    Size = UDim2.fromOffset(515, 350),
     Acrylic = false,
     Theme = "Amethyst",
-    MinimizeKey = Enum.KeyCode.LeftControl
+    MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
     Main = Window:AddTab({ Title = "Main" }),
@@ -248,21 +248,28 @@ Tabs.Info:AddParagraph({
     print("wait ,.,")
     print("LCTSV - .,.")  
 --notify
-spawn(function() 
+
+task.delay(1 * 10,function() 
+
     repeat
         task.wait()
     until game:IsLoaded()
+
     repeat
         task.wait()
     until game.Players
+
     repeat
         task.wait()
     until game.Players.LocalPlayer and game.Players.LocalPlayer.Team ~= nil 
+    
     wait(.3)
     require(game.ReplicatedStorage.Notification).new("<Color=Blue> My bio : https://bio.site/m1m <Color=/>"):Display()
     require(game.ReplicatedStorage.Notification).new("<Color=Yellow> My discord server : https://dsc.gg/m1m <Color=/>"):Display()
     require(game.ReplicatedStorage.Notification).new("<Color=Purple> ty for using mbm Hub - have fun:P <Color=/>"):Display()
+
 end)
+
 --Anti AFK
 game:GetService("Players").LocalPlayer.Idled:connect(function()
 	game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -2541,7 +2548,7 @@ local function YTZCAJC_fake_script()
 		end
 	end)
 	script.Parent.MouseButton1Click:Connect(function()
-		game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
+		game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 	end)
 end
 coroutine.wrap(YTZCAJC_fake_script)()
@@ -3938,7 +3945,7 @@ Camera:Stop()
                                         sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
                                     end
                                 elseif v.Name == MonFarm then
-                                    if (v.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 450 then
+                                    if (v.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 475 then
                                         v.Head.CanCollide = false
                                         v.HumanoidRootPart.CanCollide = false
                                         v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
