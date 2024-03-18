@@ -2852,7 +2852,7 @@ spawn(function()
         Title = "unlock fps (can use both with remove texture)",
         Description = "for who hate remove texture but still reduce lag",
         Callback = function()
-            setfpscap(68)
+            setfpscap(75)
         end
     })
 
@@ -4172,7 +4172,7 @@ spawn(function()
     end
 end)
 
-local ToggleFruit = Tabs.Player:AddToggle("ToggleFruit", {Title = "Kai stats", Default = false })
+local ToggleFruit = Tabs.Player:AddToggle("ToggleFruit", {Title = "Kaitun stats", Default = false })
 ToggleFruit:OnChanged(function(Value)
     _G.Auto_Stats_Kai = Value
     end)
