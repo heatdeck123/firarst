@@ -141,9 +141,7 @@ if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
     Request(Final1)
 end
-if game.CoreGui:FindFirstChild("Fluent") then
-	game.CoreGui:FindFirstChild("Fluent"):Destroy()
-end
+
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/main%20flunet"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/fluent%20save"))()
