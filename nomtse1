@@ -141,6 +141,9 @@ if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
 
     Request(Final1)
 end
+if game.CoreGui:FindFirstChild("Fluent") then
+	game.CoreGui:FindFirstChild("Fluent"):Destroy()
+end
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/main%20flunet"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/heatdeck123/UI-Lib/main/robloxscripts/fluent%20save"))()
@@ -2699,8 +2702,8 @@ end)
         end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {
-    Title = "Mob Aura",
-    Description = "bug",
+    Title = "report bug in discord ⚠",
+    Description = "note : have fun ;)",
     Default = false })
 ToggleMobAura:OnChanged(function(Value)
     _G.AutoNear = Value
@@ -2744,7 +2747,7 @@ spawn(function()
     end
   end)
 
-    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid / indra", Default = false })
+    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Pirate Raid / indra", Description = "both auto pirate and kill indra", Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
