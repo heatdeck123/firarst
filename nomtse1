@@ -78,7 +78,35 @@ local choices = {
     "https://i.waifu.pics/U4WPv9I.jpg", "https://i.waifu.pics/E4jszNV.jpeg", "https://i.waifu.pics/38QXoHc.jpeg", --22
     "https://i.waifu.pics/KJnKOgU.jpg", "https://i.waifu.pics/i1QE8~W.com_0265.jpg", "https://i.waifu.pics/7O7N6UP.png", --23
     "https://i.waifu.pics/h15rEN_.jpg", "https://i.waifu.pics/B_Sy4E_.png", "https://i.waifu.pics/HjkIsP1.png", "https://i.waifu.pics/tZifc8D.png", --24
-    "https://i.waifu.pics/ylZ6rIU.jpg", "https://i.waifu.pics/4eSVOil.jpg", "https://i.waifu.pics/ZV7J1WW.png" --25
+    "https://i.waifu.pics/ylZ6rIU.jpg", "https://i.waifu.pics/4eSVOil.jpg", "https://i.waifu.pics/ZV7J1WW.png", --25
+    "https://i.waifu.pics/MjtH3Ha.jpg", "https://i.waifu.pics/cG2o0Hs.jpg", "https://i.waifu.pics/_zlfBgp.jpg",
+    "https://i.waifu.pics/dPXxQqE.png", "https://i.waifu.pics/4d8jVu4.jpg", "https://i.waifu.pics/0W~KpRc.jpg",
+    "https://i.waifu.pics/q9TWFa2.png", "https://i.waifu.pics/8hqFjfL.png", "https://i.waifu.pics/5SYyPac.png",
+    "https://i.waifu.pics/jDrf_Ch.jpg", "https://i.waifu.pics/Fs1hUxz.jpg", "https://i.waifu.pics/5DWHrk_.png",
+    "https://i.waifu.pics/UyzDyil.jpg", "https://i.waifu.pics/mbQ4c4V.jpg", "https://i.waifu.pics/Dj~3I8q.jpg",
+    "https://i.waifu.pics/5At1P4A.jpg", "https://i.waifu.pics/bodE1ZR.png", "https://i.waifu.pics/BA_QzLq.jpg",
+    "https://i.waifu.pics/s1DLRKM.png", "https://i.waifu.pics/DjgwmRf.jpg", "https://i.waifu.pics/wt2ZmoY.png", 
+    "https://i.waifu.pics/JREnutK.png", "https://i.waifu.pics/G8JK8lu.png", "https://i.waifu.pics/1goGv7V.jpg", 
+    "https://i.waifu.pics/Abh~zo3.jpg", "https://i.waifu.pics/lAI_XX6.jpg", "https://i.waifu.pics/0hx-3AP.png",
+    "https://i.waifu.pics/eULPvem.png", "https://i.waifu.pics/Oz2daI3.jpg", "https://i.waifu.pics/8CGNNMq.jpg", "https://i.waifu.pics/jIClgKA.jpg",
+    "https://i.waifu.pics/pojy7zt.jpg", "https://i.waifu.pics/WMTQpNf.jpg", "https://i.waifu.pics/GTxetnS.jpg", "https://i.waifu.pics/B-CZCbU.png",
+    "https://i.waifu.pics/CwK185b.jpg", "https://i.waifu.pics/Jngw47s.png", "https://i.waifu.pics/4lyqRvd.jpg", "https://i.waifu.pics/d22x2XR.jpg",
+    "https://i.waifu.pics/2XuoPFb.png", "https://i.waifu.pics/i~n9IEk.jpg", "https://i.waifu.pics/SoQkXA3.jpg",
+    "https://i.waifu.pics/p3pJCrJ.jpg", "https://i.waifu.pics/LhA7EZ9.jpg", "https://i.waifu.pics/zOJvcV5.jpg",
+    "https://i.waifu.pics/P65Fb_X.jpg", "https://i.waifu.pics/-oA3loc.png", "https://i.waifu.pics/POqiwlb.jpg",
+    "https://i.waifu.pics/cKe~bpZ.jpg", "https://i.waifu.pics/jnuawXf.png", "https://i.waifu.pics/_laUTLb.jpg",
+    "https://i.waifu.pics/LOR7MBO.jpg", "https://i.waifu.pics/bzG5LVO.jpg", "https://i.waifu.pics/JIQ9QZ_.jpg",
+    "https://i.waifu.pics/6NYYSw6.png", "https://i.waifu.pics/9seL-Rc.jpg", "https://i.waifu.pics/z1rMzBR.jpg",
+    "https://i.waifu.pics/uc-SymC.jpg", "https://i.waifu.pics/2Xdpuov.png", "https://i.waifu.pics/FWE8ggD.png",
+    "https://i.waifu.pics/7tsyFFs.png", "https://i.waifu.pics/zkJ5AHV.png", "https://i.waifu.pics/8RHEB7A.png",
+    "https://i.waifu.pics/bzgUs3j.jpg", "https://i.waifu.pics/2RnEtbW.png", "https://i.waifu.pics/0AZnvOg.jpg",
+    "https://i.waifu.pics/tLc5RfN.png", "https://i.waifu.pics/3DpVCc3.jpg", "https://i.waifu.pics/CxL~Tbz.jpg",
+    "https://i.waifu.pics/VI2XzIl.png", "https://i.waifu.pics/bMH6oaI.png", "https://i.waifu.pics/20~zWP3.png",
+    "https://i.waifu.pics/VIJYb_Z.png", "https://i.waifu.pics/XcpL3nR.jpg", "https://i.waifu.pics/anKsYF2.png", 
+    "https://i.waifu.pics/GGX054U.jpg", "https://i.waifu.pics/ZV7J1WW.png", "https://i.waifu.pics/wRpvaDu.jpg",
+    "https://i.waifu.pics/_NBeyLj.png", "https://i.waifu.pics/xUB0UNx.jpg", "https://i.waifu.pics/lMiXE7j.png",
+    "https://i.waifu.pics/2X92FPH.jpeg", "https://i.waifu.pics/ysB8wtC.jpg", "https://i.waifu.pics/HlZeFoe.png", "https://i.waifu.pics/Wc5WkuE.png", "https://i.waifu.pics/_zlfBgp.jpg"
+
 }
 
 local randomIndex = math.random(1, #choices)
